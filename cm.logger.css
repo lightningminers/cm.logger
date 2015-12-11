@@ -1,0 +1,57 @@
+.am-container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
+pre {
+    display: block;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: #555555;
+    background-color: #f8f8f8;
+    border: 1px solid #dedede;
+    border-radius: 0;
+}
+
+code, kbd, pre, samp {
+    font-family: Monaco, Menlo, Consolas, "Courier New", "FontAwesome", monospace;
+}
+
+.am-btn-success {
+    color: #fff;
+    background-color: #5eb95e;
+    border-color: #5eb95e;
+}
+.am-btn {
+    display: inline-block;
+    margin-bottom: 0;
+    padding: 0.5em 1em;
+    vertical-align: middle;
+    font-size: 1.6rem;
+    font-weight: normal;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0;
+    cursor: pointer;
+    outline: 0;
+    -webkit-appearance: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: background-color 300ms ease-out, border-color 300ms ease-out;
+    transition: background-color 300ms ease-out, border-color 300ms ease-out;
+}
