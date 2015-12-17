@@ -78,6 +78,7 @@
         info.push(all);
         _info.push(all);
         CMLoggerContainer.innerHTML = info.join('');
+        ctrlElement();
     };
     var sendToConsoleLogger = function(requestData){
         var XHR = new XMLHttpRequest();
@@ -87,14 +88,13 @@
     };
     window.addEventListener('error',function(e){
         sendToLogger({k:'error',m:e.message,u:e.filename,l:e.lineno});
-        ctrlElement();
+        
     });
     document.addEventListener('load',function(e){
         //加载完成
     },true);
     document.addEventListener('error',function(e){
         sendToLogger({k:'load source error',m:e.target.src,tag:e.target.nodeName});
-        ctrlElement();
     },true);
     window.CMLogger = {
         /**
@@ -119,7 +119,7 @@
                                         _info += tree(_value);
                                         break;
                                     default:
-                                        if (log !== undefined && log !== null && log !== NaN) {
+                                        if (log == undefined || log == null || log == NaN) {
                                             log = 'undefined,null,NaN \r\n';
                                             break;
                                         };
@@ -151,7 +151,7 @@
                     log = treeInfo(log);
                     break
                 default:
-                    if (log !== undefined && log !== null && log !== NaN) {
+                    if (log == undefined || log == null || log == NaN) {
                         log = 'undefined,null,NaN \r\n';
                         break;
                     };
@@ -194,7 +194,7 @@
                     log = JSON.stringify(log)+'\r\n';
                     break;
                 default:
-                    if (log !== undefined && log !== null && log !== NaN) {
+                    if (log == undefined || log == null || log == NaN) {
                         log = 'undefined,null,NaN \r\n';
                         break;
                     };
