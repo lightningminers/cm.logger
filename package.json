@@ -1,0 +1,22 @@
+{
+  "name": "cm.logger",
+  "version": "1.0.0",
+  "description": "日志输出",
+  "main": "cm.logger.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icepy/cm.logger.git"
+  },
+  "keywords": [
+    "log"
+  ],
+  "author": "icepy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/icepy/cm.logger/issues"
+  },
+  "homepage": "https://github.com/icepy/cm.logger#readme"
+}

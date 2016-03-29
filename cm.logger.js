@@ -4,9 +4,19 @@
  * @info 移动版log输出模型，不依赖任何框架与库
  */
 
-'use strict';
+ 'use strict';
 
-(function(){
+ (function(factory) {
+ 	var root = (typeof self == 'object' && self.self == self && self) ||
+ 		(typeof global == 'object' && global.global == global && global);
+ 	if(typeof exports === 'object' && typeof module === 'object'){
+ 		module.exports = factory();
+ 	}else if(typeof exports === 'object'){
+ 		exports['CMLogger'] = factory()
+ 	}else{
+ 		root.CMLogger = factory();
+ 	};
+})(function() {
     var callback = null;
     var body = document.getElementsByTagName('body')[0];
     var children = body.children;
@@ -88,7 +98,7 @@
     };
     window.addEventListener('error',function(e){
         sendToLogger({k:'error',m:e.message,u:e.filename,l:e.lineno});
-        
+
     });
     document.addEventListener('load',function(e){
         //加载完成
@@ -96,7 +106,7 @@
     document.addEventListener('error',function(e){
         sendToLogger({k:'load source error',m:e.target.src,tag:e.target.nodeName});
     },true);
-    window.CMLogger = {
+    return {
         /**
          * [intensify 递归版]
          * @param  {[*]} log [*]
@@ -217,4 +227,4 @@
         info:_info,
         version:'0.0.1'
     }
-})();
+});
