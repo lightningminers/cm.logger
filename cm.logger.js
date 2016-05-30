@@ -24,7 +24,7 @@
     var console = _window.console;
     var cmLogger = document.createElement('div');
     cmLogger.id = 'CMLogger';
-    cmLogger.className = 'am-container';
+    cmLogger.className = 'cm-container';
     cmLogger.style.position = 'absolute';
     cmLogger.style.top = '0px';
     cmLogger.style.left = '0px';
@@ -33,7 +33,7 @@
     var sendMessageBut = document.createElement('button');
     sendMessageBut.id = 'CMSendMessageLogger';
     sendMessageBut.type = 'button';
-    sendMessageBut.className = 'am-btn am-btn-success';
+    sendMessageBut.className = 'cm-btn cm-btn-success';
     sendMessageBut.appendChild(document.createTextNode('错误信息提交远程服务'));
     cmLogger.appendChild(sendMessageBut);
     sendMessageBut = null;

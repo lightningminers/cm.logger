@@ -6,8 +6,6 @@ JavaScript错误捕获，日志展示插件，不依赖任何库或框架，可�
 
 ![](cm.logger.png)
 ---
-![](native.png)
----
 
 ### 使用
 
@@ -16,40 +14,6 @@ JavaScript错误捕获，日志展示插件，不依赖任何库或框架，可�
 方式一：在网页输出日志与错误信息
 
 > 直接引入cm.logger.js，cm.logger.css
-
-
-方式二：在iOS端输出日志与错误信息
-
-- 需要在你的index.html中引入cm.logger.js，不需要cm.logger.css文件。
-- 在你的Xcode中导入CMLoggerNative这个目录下的所有文件。
-
-```Objective-C
-+(void)managerApp:(UIView *)subMFLogView managWebView:(UIWebView *)webview;
-```
-
-使用[CMLogger readConfig:^(NSDictionary *debugConfig) {}]读取配置文件，在这个Block中，把CMLogger注册进去。并且创建自己的UIView以及传递被接管App的UIWebView对象给注册方法，注册方法会持久持有，至此CMLogger会全面接管App的网络，以及UI界面。
-
-例子：
-
-```Objective-C
-__weak AppDelegate *weakSelf = self;
-[MFLog readConfig:^(NSDictionary *debugConfig) {
-    NSNumber *openCMLogger = debugConfig[@"openCMLogger"];
-    static NSInteger mTop = 260;
-    if (openCMLogger) {
-        if ([openCMLogger intValue] != 0) {
-            CGRect mainScreen = [[UIScreen mainScreen] bounds];
-            CGFloat WKWebViewHeight = mainScreen.size.height - mTop;
-            weakSelf.viewController.webView.frame = CGRectMake(0, 0, mainScreen.size.width, WKWebViewHeight);
-            CGFloat debugY = self.viewController.webView.frame.size.height;
-            UIView *subManagerView = [[UIView alloc] initWithFrame:CGRectMake(0, debugY, mainScreen.size.width, mTop)];
-            subManagerView.backgroundColor = [UIColor whiteColor];
-            [weakSelf.viewController.view addSubview:subManagerView];
-            [CMLogger managerApp:subManagerView managWebView:weakSelf.viewController.webView];
-        }
-    }
-}];
-```
 
 ### JavaScript API
 

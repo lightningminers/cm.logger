@@ -1,4 +1,4 @@
-.am-container {
+.cm-container {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin-left: auto;
@@ -27,12 +27,12 @@ code, kbd, pre, samp {
     font-family: Monaco, Menlo, Consolas, "Courier New", "FontAwesome", monospace;
 }
 
-.am-btn-success {
+.cm-btn-success {
     color: #fff;
     background-color: #5eb95e;
     border-color: #5eb95e;
 }
-.am-btn {
+.cm-btn {
     display: inline-block;
     margin-bottom: 0;
     padding: 0.5em 1em;
